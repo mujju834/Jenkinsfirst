@@ -7,9 +7,9 @@ pipeline {
                 dir('frontend') {
                     script {
                         // Install dependencies
-                        sh 'npm install'
+                        bat 'npm install'
                         // Build the React app
-                        sh 'npm run build'
+                        bat 'npm run build'
                     }
                 }
             }
@@ -20,9 +20,10 @@ pipeline {
                 dir('backend') {
                     script {
                         // Install dependencies
-                        sh 'npm install'
+                        bat 'npm install'
                         // Test the Node.js app
-                        sh 'npm test'
+                        // Note: Add your test script in package.json
+                        bat 'npm test'
                     }
                 }
             }
