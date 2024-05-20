@@ -40,9 +40,14 @@ pipeline {
         }
     }
 
-    post {
+ post {
         always {
-            cleanWs()
+            script {
+                // Add a Windows-specific command to kill the Node.js process
+                echo 'Attempting to kill Node.js process...'
+                bat 'taskkill /IM node.exe /F'
+            }
+            cleanWs(cleanup: true) // Cleanup workspace after killing the process
         }
     }
 }
