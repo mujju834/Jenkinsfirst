@@ -21,10 +21,9 @@ pipeline {
                     script {
                         // Install dependencies
                         bat 'npm install'
-                        // Test the Node.js app
-                        // Note: Add your test script in package.json
-                        sh 'start /b node index.js'
-                    sleep(60) // Sleep for 60 seconds
+                        // Run Node.js app in background and wait
+                        bat 'start /b node index.js'
+                        sleep(60) // Sleep for 60 seconds to let the server run
                     }
                 }
             }
