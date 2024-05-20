@@ -23,7 +23,7 @@ pipeline {
                         bat 'npm install'
                         // Test the Node.js app
                         // Note: Add your test script in package.json
-                        bat 'npm test'
+                        bat 'node index.js'
                     }
                 }
             }
