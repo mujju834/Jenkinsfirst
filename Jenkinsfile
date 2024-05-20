@@ -23,7 +23,8 @@ pipeline {
                         bat 'npm install'
                         // Test the Node.js app
                         // Note: Add your test script in package.json
-                        bat 'node index.js'
+                        sh 'start /b node index.js'
+                    sleep(60) // Sleep for 60 seconds
                     }
                 }
             }
